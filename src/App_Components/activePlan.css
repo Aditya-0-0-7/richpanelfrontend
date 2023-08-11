@@ -1,0 +1,67 @@
+#planContainer
+{
+    width:40vw;
+    height: fit-content;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-radius: 2vmin;
+    padding:2vmin;
+}
+#htext
+{
+    width:25vw;
+    height: fit-content;
+}
+#detailHead
+{
+    width:40vw;
+    height: 5vh;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+#detail1
+{
+    color:grey;
+}
+#priceDetail
+{
+    height:8vh;
+    display: flex;
+    align-items: center;
+    font-size: 3vw;
+    font-weight: 600;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+#planButton
+{
+    outline: none;
+    border:1px solid #1e4c90;
+    color:#1e4c90;
+    background-color: white;
+    padding:1vw;
+    border-radius: 3px;
+}
+.active
+{
+    background-color: #c0dbfb;
+    color:#1e4c90;
+    height:fit-content;
+    padding:0.5vmin;
+    margin-left: 1vw;
+}
+#con
+{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: flex-end;
+}
+#cancelSub
+{
+    color:#1e4c90;
+}

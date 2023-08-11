@@ -1,0 +1,61 @@
+#planContainer
+{
+    width:15vw;
+    height:80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+#planType
+{
+    width:10vw;
+    height:15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+.selectedPlanType
+{
+    background-color: #1e4c91;
+    color:white;
+}
+.unselectedPlanType
+{
+    background-color: #7894bd;
+    color:white;
+}
+.selectedText
+{
+    color:#1e4c91;
+    font-weight: 500;
+}
+.unSelectedText
+{
+    color:grey;
+    font-weight: 500;
+}
+#common
+{
+    display:flex;
+    width:15vw;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+}
+#deviceList
+{
+    display: flex;
+    flex-direction: column;
+    width:10vw;
+    height:35vh;
+}
+#device
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:8vh;
+}

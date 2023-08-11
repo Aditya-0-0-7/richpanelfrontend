@@ -1,0 +1,69 @@
+#paymentFormContainer
+{
+    width:73vw;
+    height: 40vh;
+    display: flex;
+    background-color: white;
+}
+#cardDetail{
+    width:40vw;
+    height:fit-content;
+    padding:3vmin;
+}
+#paymentHead
+{
+    font-size: 4vmin;
+    font-weight: 600;
+    width:30vw;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+}
+#mess
+{
+    color:grey;
+    word-wrap: break-word;
+    margin-bottom: 2vw;
+}
+#card
+{
+    width:30vw;
+    height:fit-content;
+    border: 1px solid grey;
+    padding:1vmin;
+    border-radius: 3px;
+}
+#paybtn
+{
+    background-color: #1e4c90;
+    color: white;
+    padding:2vmin;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    margin-top: 2vw;
+}
+#orderDetail
+{
+    width:30vw;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f5f7;
+    padding-left: 3vw;
+}
+#item
+{
+    height:5vh;
+    width:25vw;
+    display: flex;
+    justify-content: space-between;
+}
+#summary
+{
+    font-weight: 600;
+    font-size: 3vmin;
+    margin-top: 4vh;
+    margin-bottom: 2vh;
+}

@@ -1,0 +1,93 @@
+#screen
+{
+    display:flex;
+    width:100vw;
+    height:100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e4c90;
+    z-index: 0;
+}
+.container
+{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:29.7vw;
+    border-radius: 5%;
+    background-color: white;
+}
+#heading1
+{
+    font-weight: 500;
+    padding:2vmin;
+    margin-top: 2vh;
+    word-wrap: break-word;
+    text-align: center;
+    font-size: 3vmin;
+}
+#heading2
+{
+    font-weight: 500;
+    padding:0.5vmin;
+}
+#credentialContainer
+{
+    padding:1vmin;
+    height: 9vh;
+    width: 22.4vw;
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+#credentialInput
+{
+    width:100%;
+    box-sizing: border-box;
+    height:5.3vh;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 1vw;
+}
+#credentialInput:focus {
+    outline: none;
+    border:1px solid #ccc;
+    border-radius: 5px;
+  }
+#message
+{
+    display: flex;
+    justify-content: flex-start;
+    width: 22.4vw;
+}
+#loginBtn
+{
+    width: 22.4vw;
+    height: 5.9vh;
+    color: white;
+    background-color: #1e4c90;
+    outline: none;
+    border:none;
+    border-radius: 5px;
+    margin-top: 4vh;
+    margin-bottom:4vh;
+    cursor: pointer;
+}
+#bottomMessage
+{
+    margin-bottom: 2vh;
+    display: flex;
+}
+input[type=checkbox]
+{
+    margin-right: 0.5vw;
+    margin-bottom: 0;;
+}
+#link
+{
+    color:#8099c0;
+    margin-left: 0.5vw;
+    cursor: pointer;
+}

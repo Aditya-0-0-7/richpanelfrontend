@@ -1,0 +1,18 @@
+#loadScreen
+{
+    z-index: 1;
+    width:100vw;
+    height:100vh;
+    background-color: rgba(30,76,144,0.9);
+    position:absolute;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#loadingImage
+{
+    width:60vw;
+    height:60vh;
+}

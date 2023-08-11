@@ -1,0 +1,132 @@
+#planScreen
+{
+    width:100vw;
+    height:100vh;
+    flex-direction: column;
+}
+#planMessage
+{
+    width:100vw;
+    height: 18vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 4vmin;
+}
+#contentContainer
+{
+    width:100vw;
+    height:70vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content:center;
+}
+#leftContent
+{
+    width:30vw;
+    height:70vh;
+}
+#rightContent
+{
+    width:60vw;
+    height:70vh;
+    display: flex;
+}
+#bottomContent
+{
+    height:10vh;
+    width:100vw;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+#planBtn
+{
+    height:8vh;
+    width:40vw;
+    color:white;
+    background-color:#1e4c91;
+    outline:none;
+    border:none;
+    border-radius:3px;
+    cursor: pointer;
+    font-size: 2.8vmin;
+}
+#periodHolder
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width:30vw;
+    height: 15vh;
+    border:none;
+}
+#periodContainer
+{
+    width:20vw;
+    height:10vh;
+    background-color: #1e4c91;
+    border-radius: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#unselectedPeriod
+{
+    width:10vw;
+    height: 8vh;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#selectedPeriod
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:10vw;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    height: 8vh;
+    background-color: white;
+    color:#1e4c91;
+    border-radius: 4vh;
+    cursor: pointer;
+    font-weight: 500;
+}
+.leftContentCommon
+{
+    margin:0;
+    width:30vw;
+    height:10vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.line1
+{
+    position:absolute;
+    left:4vw;
+    top:42vh;
+    width:90vw;
+}
+.line2
+{
+    position:absolute;
+    left:4vw;
+    top:52vh;
+    width:90vw;
+}
+.line3
+{
+    position:absolute;
+    left:4vw;
+    top:62vh;
+    width:90vw;
+}
+.line{
+    position:absolute;
+}
