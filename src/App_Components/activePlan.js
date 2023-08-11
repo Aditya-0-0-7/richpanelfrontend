@@ -17,7 +17,7 @@ function ActivePlan({planBtnHandler,toastHandler,loadingHandler,monthly})
             return;
         }
         loadingHandler();
-        customFetch('https://richpanel-backend-64uw5gjo8-aditya-0-0-7.vercel.app/cancelSubscription',{}).then(async(res)=>{
+        customFetch('https://richpanel-backend-8mf3asl0j-aditya-0-0-7.vercel.app/cancelSubscription',{}).then(async(res)=>{
             if(res.status===200)
             {
                 setcancelled(true);
@@ -34,7 +34,7 @@ function ActivePlan({planBtnHandler,toastHandler,loadingHandler,monthly})
 
     useEffect(()=>{
         loadingHandler();
-        customFetch('https://richpanel-backend-64uw5gjo8-aditya-0-0-7.vercel.app/getSubscription',{}).then(async(res)=>{
+        customFetch('https://richpanel-backend-8mf3asl0j-aditya-0-0-7.vercel.app/getSubscription',{}).then(async(res)=>{
                 if(res.status===200)
                 {
                     const data=await res.json();

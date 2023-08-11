@@ -46,7 +46,7 @@ function Plans({selectorValueUpdater,toastHandler,loadingHandler})
             loadingHandler();
             async function fetches()
             {
-                const result=await customFetch('https://richpanel-backend-64uw5gjo8-aditya-0-0-7.vercel.app/checkPlan',{});
+                const result=await customFetch('https://richpanel-backend-8mf3asl0j-aditya-0-0-7.vercel.app/checkPlan',{});
                 if(result.status===200)
                 {
                     const data=await result.json();
@@ -59,10 +59,11 @@ function Plans({selectorValueUpdater,toastHandler,loadingHandler})
                 }
                 else{
                     loadingHandler();
+
                     toastHandler("Some Error Occured");
                     return;
                 }
-                customFetch('https://richpanel-backend-64uw5gjo8-aditya-0-0-7.vercel.app/fetchPlans',{}).then(async (res)=>{
+                customFetch('https://richpanel-backend-8mf3asl0j-aditya-0-0-7.vercel.app/fetchPlans',{}).then(async (res)=>{
                     loadingHandler();
                     if(res.status===200)
                     {
