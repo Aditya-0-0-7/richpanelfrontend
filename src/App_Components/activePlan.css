@@ -1,6 +1,6 @@
-#planContainer
+#planContainers
 {
-    width:40vw;
+    width:fit-content;
     height: fit-content;
     background-color: white;
     display: flex;
@@ -8,51 +8,44 @@
     align-items: flex-start;
     justify-content: flex-start;
     border-radius: 2vmin;
-    padding:2vmin;
+    padding:3vmin;
 }
 #htext
 {
     width:25vw;
+    font-size: 3vmin;
     height: fit-content;
 }
 #detailHead
 {
     width:40vw;
-    height: 5vh;
+    min-height: 5vh;
+    height: fit-content;
     font-weight: 600;
     display: flex;
     align-items: center;
-}
-#detail1
-{
-    color:grey;
-}
-#priceDetail
-{
-    height:8vh;
-    display: flex;
-    align-items: center;
-    font-size: 3vw;
-    font-weight: 600;
-    margin-top: 2vh;
     margin-bottom: 2vh;
-}
-#planButton
-{
-    outline: none;
-    border:1px solid #1e4c90;
-    color:#1e4c90;
-    background-color: white;
-    padding:1vw;
-    border-radius: 3px;
 }
 .active
 {
+    width: fit-content;
     background-color: #c0dbfb;
-    color:#1e4c90;
+    color:#3c65bf;
     height:fit-content;
     padding:0.5vmin;
-    margin-left: 1vw;
+    margin-left: 1vmin;
+    border-radius: 3px;
+}
+.cancelled
+{
+    width: fit-content;
+    height: fit-content;
+    background-color: #fbeff0;
+    color:#e7837f;
+    height:fit-content;
+    padding:0.5vmin;
+    margin-left: 1vmin;
+    border-radius: 3px;
 }
 #con
 {
@@ -64,4 +57,26 @@
 #cancelSub
 {
     color:#1e4c90;
+    cursor: pointer;
+}
+#priceDetail
+{
+    height:8vh;
+    display: flex;
+    align-items: center;
+    font-size: 5vmin;
+    font-weight: 700;
+    margin-top: 1.5vmin;
+    margin-bottom: 1.5vmin;
+}
+#planButton
+{
+    outline: none;
+    border:1px solid #1e4c90;
+    color:#1e4c90;
+    background-color: white;
+    padding:1.5vmin;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 600;
 }

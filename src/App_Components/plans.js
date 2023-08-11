@@ -2,6 +2,7 @@ import {useState,useEffect} from 'react';
 import customFetch from '../networkRequest/customFetch';
 import PlanContainer from './containers/planContainer';
 import Payment from './payment';
+import ActivePlan from './activePlan';
 import './plans.css';
 
 function Plans({selectorValueUpdater,toastHandler,loadingHandler})
@@ -10,6 +11,7 @@ function Plans({selectorValueUpdater,toastHandler,loadingHandler})
     const [monthly,setMonthly]=useState(true);
     const [selectedPlan,setSelectedPlan]=useState("Basic");
     const [paymentScreen,setScreen]=useState(false);
+    const [activeScreen,setActive]=useState(false);
     const[planObject,setObject]=useState({});
 
     const periodMonthlyHandler=()=>{
@@ -32,45 +34,68 @@ function Plans({selectorValueUpdater,toastHandler,loadingHandler})
     }
 
     const planBtnHandler=()=>{
-        setScreen(true);
+        console.log("hhhhhhhhh");
+        if(setActive)
+            setActive(false);
+        setScreen(value=>!value);
     }
 
     useEffect(()=>{
         if(planData.length===0)
         {
             loadingHandler();
-            customFetch('http://localhost:5000/fetchPlans',{}).then(async (res)=>{
-                loadingHandler();
-                if(res.status===200)
+            async function fetches()
+            {
+                const result=await customFetch('https://richpanel-backend-64uw5gjo8-aditya-0-0-7.vercel.app/checkPlan',{});
+                if(result.status===200)
                 {
-                    const data=await res.json();
-                    setData(data.data);
-                    setObject(data.data.filter((v)=>{
-                        if(v['Plan Name']==='Basic')
-                            return(true)
-                        return(false);
-                    })[0]);
+                    const data=await result.json();
+                    console.log(data);
+                    if(data.status)
+                    {
+                        setScreen(true);
+                        setActive(true);
+                    }
                 }
-                else if(res.status()===401)
-                {
-                    const data=await res.json();
-                    toastHandler(data.message);
-                    selectorValueUpdater(0);
+                else{
+                    loadingHandler();
+                    toastHandler("Some Error Occured");
+                    return;
                 }
-                else
-                {
-                    const parsedRes= await res.json(); 
-                    toastHandler(parsedRes.message);
-                }
-            }).catch((err)=>{
-                loadingHandler();
-                toastHandler("Some Error occured while fetching the plans. Please refresh the page");
-            });
+                customFetch('https://richpanel-backend-64uw5gjo8-aditya-0-0-7.vercel.app/fetchPlans',{}).then(async (res)=>{
+                    loadingHandler();
+                    if(res.status===200)
+                    {
+                        const data=await res.json();
+                        setData(data.data);
+                        setObject(data.data.filter((v)=>{
+                            if(v['Plan Name']==='Basic')
+                                return(true)
+                            return(false);
+                        })[0]);
+                    }
+                    else if(res.status()===401)
+                    {
+                        const data=await res.json();
+                        toastHandler(data.message);
+                        selectorValueUpdater(0);
+                    }
+                    else
+                    {
+                        const parsedRes= await res.json(); 
+                        toastHandler(parsedRes.message);
+                    }
+                }).catch((err)=>{
+                    loadingHandler();
+                    toastHandler("Some Error occured while fetching the plans. Please refresh the page");
+                });
+            }
+            fetches();
         }
     },[]);
 
-    return(
-        !paymentScreen?<div id="planScreen">
+    return(activeScreen?<div id='paymentScreen'><ActivePlan planBtnHandler={planBtnHandler} monthly={monthly} toastHandler={toastHandler} loadingHandler={loadingHandler} /></div>:
+        (!paymentScreen?<div id="planScreen">
             <hr className='line1'/>
             <hr className='line2'/>
             <hr className='line3'/>
@@ -99,7 +124,7 @@ function Plans({selectorValueUpdater,toastHandler,loadingHandler})
             </div>
         </div>
         :
-        <Payment plans={planObject} selectorValueUpdater={selectorValueUpdater} monthly={monthly} selectedPlan={selectedPlan} toastHandler={toastHandler} loadingHandler={loadingHandler} />
+        <Payment plans={planObject} planBtnHandler={planBtnHandler} monthly={monthly} selectedPlan={selectedPlan} toastHandler={toastHandler} loadingHandler={loadingHandler} />)
     );
 }
 export default Plans;

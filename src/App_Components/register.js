@@ -35,7 +35,7 @@ function Register({selectorValueUpdater,toastHandler,loadingHandler})
         else
         {
             loadingHandler();
-            fetch('http://localhost:5000/register',{
+            fetch('https://richpanel-backend-64uw5gjo8-aditya-0-0-7.vercel.app/register',{
                 method: "POST",
                 mode:'cors',
                 body: JSON.stringify({email:email,password:password,name:name}),

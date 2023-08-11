@@ -33,7 +33,7 @@ function Login({selectorValueUpdater,toastHandler,loadingHandler})
         else
         {
             loadingHandler();
-            fetch('http://localhost:5000/login',{
+            fetch('https://richpanel-backend-64uw5gjo8-aditya-0-0-7.vercel.app/login',{
                 method: "POST",
                 mode:'cors',
                 body: JSON.stringify({email:email,password:password,remember:remember}),

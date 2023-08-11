@@ -4,7 +4,6 @@ import Register from './App_Components/register';
 import Plans from './App_Components/plans';
 import Loading from './App_Components/loading';
 import Toast from './App_Components/Toast';
-import './App.css';
 function App() {
   const [screenSelector,setSelectorValue]=useState(0);
   const [displayToast,setDisplay]=useState(false);

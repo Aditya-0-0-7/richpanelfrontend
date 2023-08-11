@@ -3,7 +3,6 @@ import {
     useElements,
     useStripe,
   } from "@stripe/react-stripe-js";
-import React, { useState } from "react";
 import customFetch from '../networkRequest/customFetch';
 import './paymentForm.css';
 function PaymentForm({plans,monthly,paymentUpdate,toastHandler,loadingHandler,selectedPlan,index})
@@ -19,7 +18,7 @@ function PaymentForm({plans,monthly,paymentUpdate,toastHandler,loadingHandler,se
                 card: elements.getElement("card"),
                 type: "card",
               });
-            const response = await customFetch("http://localhost:5000/payment",{
+            const response = await customFetch("https://richpanel-backend-64uw5gjo8-aditya-0-0-7.vercel.app/payment",{
                 paymentMethod: paymentMethod.paymentMethod.id,
                 plan:selectedPlan,
                 index:index
@@ -81,7 +80,7 @@ function PaymentForm({plans,monthly,paymentUpdate,toastHandler,loadingHandler,se
             <div id="summary">Order Summary</div>
             <div id="item"><div>Plan Name</div><div>{plans['Plan Name']}</div></div>
             <div id="item"><div>Billing Cycle</div><div>{monthly?'Monthly':'Yearly'}</div></div>
-            <div id="item"><div>Plan Price</div><div>{monthly?plans['Monthly Price']:plans['Yearly Price']}</div></div>
+            <div id="item"><div>Plan Price</div><div>&#8377; {monthly?plans['Monthly Price']?.split(' ')[0]:plans['Yearly Price']?.split(' ')[0]}{monthly?'/mo':'/ye'}</div></div>
             
         </div>
     </div>);
